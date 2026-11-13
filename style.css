@@ -124,7 +124,7 @@ font-family: "National Park", sans-serif;
     width: 24px;
 font-weight: bold;
     font-size: 1.2rem;
-    color: #3f51b5; /* Jouw blauwe kleur */
+    color: #ffcae9; 
     margin-right: 15px;
     text-align: center;
 }
@@ -135,6 +135,7 @@ font-weight: bold;
 font-weight: bold;
     text-decoration: none;
 }
+
 
 .contact-list a:hover {
     text-decoration: underline;
