@@ -1,0 +1,250 @@
+/* Basis Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+font-family: "National Park", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Of de dikte die jij hebt gekozen (bijv. 400 of 700) */
+    font-style: normal;
+    background-color: #ffffff;
+    color: #454ade;
+    overflow-x: hidden;
+}
+
+
+/* Hoofdcontainer */
+.site-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Linkerzijbalk */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh; /* Maakt de zijbalk exact zo hoog als het scherm */
+    display: flex;
+    flex-direction: column; /* Zet logo, menu en footer onder elkaar */
+    justify-content: space-between; /* Duwt het eerste element boven en laatste onder */
+    padding: 40px 20px;
+    box-sizing: border-box;
+    background-color: #ffffff; /* Of jouw achtergrondkleur */
+}
+
+.logo img {
+    max-width: 150px;
+    height: auto;
+    display: block;
+}
+
+.nav-menu {
+    margin-top: 40px;
+}
+
+.nav-menu ul {
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-bottom: 12px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #454ade;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+    color: #ffcae9;
+}
+.nav-menu a.active {
+    color: #454ade;
+    font-weight: bold;
+}
+
+.footer-note {
+    margin-top: auto; 
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.footer-note p {
+    font-size: 0.75rem;
+    color: #888;
+}
+
+/* Galerij Raster */
+.gallery {
+    margin-left: 260px;
+    padding: 40px;
+    width: calc(100% - 260px);
+    column-count: 3;        /* Zorgt voor exact 3 kolommen naast elkaar */
+    column-gap: 20px;       /* De witruimte tussen de kolommen */
+}
+
+.grid-item {
+    break-inside: avoid;    /* Voorkomt dat een afbeelding halverwege wordt doorgeknipt naar de volgende kolom */
+    margin-bottom: 20px;    /* De witruimte onder elke afbeelding */
+    cursor: pointer;
+}
+
+.grid-item img {
+    width: 100%;            /* Vult de kolombreedte netjes op */
+    height: auto;           /* Behoudt de eigen hoogte/verhouding van elke afbeelding */
+    display: block;
+    transition: opacity 0.2s ease;
+}
+
+.grid-item img:hover {
+    opacity: 0.9;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.contact-list i {
+    width: 24px;
+font-weight: bold;
+    font-size: 1.2rem;
+    color: #3f51b5; /* Jouw blauwe kleur */
+    margin-right: 15px;
+    text-align: center;
+}
+
+.contact-list a, 
+.contact-list span {
+    color: #3f51b5;
+font-weight: bold;
+    text-decoration: none;
+}
+
+.contact-list a:hover {
+    text-decoration: underline;
+}
+
+/* LIGHTBOX STIJLEN (De pop-up overlay) */
+.lightbox {
+    display: none; /* Standaard onzichtbaar */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.85); /* Witte/lichte transparante achtergrond */
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+/* NIEUW: Container die de foto en tekst netjes onder elkaar houdt */
+.lightbox-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 85%;
+    max-height: 85vh;
+}
+
+.lightbox-img {
+    max-width: 100%;
+    max-height: 75vh; /* Iets kleiner gemaakt zodat er ruimte overblijft voor de tekst */
+    object-fit: contain;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Subtiele schaduw */
+}
+
+/* ABOUT PAGINA STIJLEN */
+.about-content {
+    margin-left: 260px;
+    padding: 50px 40px;
+    width: calc(100% - 260px);
+    max-width: 680px; /* Zorgt dat de tekstregels niet te breed en onleesbaar worden */
+}
+
+.about-image {
+    margin-bottom: 30px;
+}
+
+.about-image img {
+    max-width: 60%;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.about-text p {
+    margin-bottom: 18px;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #3f51b5; /* Pas aan naar jouw exacte blauwe kleurcode */
+}
+
+
+
+
+/* NIEUW: Stijl voor de tekst onder de foto */
+.lightbox-caption {
+    margin-top: 15px;
+    color: #454ade;
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.2px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 2.5rem;
+    color: #333;
+    cursor: pointer;
+    font-weight: 300;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+@media (max-width: 900px) {
+    .site-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 30px 20px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-menu {
+        margin-top: 25px;
+    }
+
+    .gallery {
+        margin-left: 0;
+        width: 100%;
+        column-count: 1;    /* 1 kolom op mobiel */
+        padding: 20px;
+    }
+}
