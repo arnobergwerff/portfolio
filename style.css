@@ -225,27 +225,27 @@ font-weight: bold;
     color: #000;
 }
 
-@media (max-width: 900px) {
-    .site-container {
+/* Mobiele weergave (schermen smaller dan 768px) */
+@media (max-width: 768px) {
+    /* Zorg dat de hoofdcontainer niet naast elkaar blijft staan */
+    body, .container, .wrapper {
+        display: block;
         flex-direction: column;
     }
 
-    .sidebar {
-        position: relative;
+    /* Zet de zijbalk bovenaan over de volle breedte */
+    aside, .sidebar {
+        position: static;
         width: 100%;
         height: auto;
-        padding: 30px 20px;
-        border-bottom: 1px solid #eee;
-    }
-
-    .nav-menu {
-        margin-top: 25px;
-    }
-
-    .gallery {
-        margin-left: 0;
-        width: 100%;
-        column-count: 1;    /* 1 kolom op mobiel */
         padding: 20px;
     }
+
+    /* Haal de vaste linker-marge weg bij de hoofdinhoud */
+    main, .content {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+}
 }
