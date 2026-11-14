@@ -6,15 +6,14 @@
 }
 
 body {
-font-family: "National Park", sans-serif;
+    font-family: "National Park", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400; /* Of de dikte die jij hebt gekozen (bijv. 400 of 700) */
+    font-weight: 400;
     font-style: normal;
     background-color: #ffffff;
     color: #454ade;
     overflow-x: hidden;
 }
-
 
 /* Hoofdcontainer */
 .site-container {
@@ -28,13 +27,13 @@ font-family: "National Park", sans-serif;
     top: 0;
     left: 0;
     width: 260px;
-    height: 100vh; /* Maakt de zijbalk exact zo hoog als het scherm */
+    height: 100vh;
     display: flex;
-    flex-direction: column; /* Zet logo, menu en footer onder elkaar */
-    justify-content: space-between; /* Duwt het eerste element boven en laatste onder */
+    flex-direction: column;
+    justify-content: space-between;
     padding: 40px 20px;
     box-sizing: border-box;
-    background-color: #ffffff; /* Of jouw achtergrondkleur */
+    background-color: #ffffff;
 }
 
 .logo img {
@@ -65,6 +64,7 @@ font-family: "National Park", sans-serif;
 .nav-menu a:hover {
     color: #ffcae9;
 }
+
 .nav-menu a.active {
     color: #454ade;
     font-weight: bold;
@@ -86,19 +86,19 @@ font-family: "National Park", sans-serif;
     margin-left: 260px;
     padding: 40px;
     width: calc(100% - 260px);
-    column-count: 3;        /* Zorgt voor exact 3 kolommen naast elkaar */
-    column-gap: 20px;       /* De witruimte tussen de kolommen */
+    column-count: 3;
+    column-gap: 20px;
 }
 
 .grid-item {
-    break-inside: avoid;    /* Voorkomt dat een afbeelding halverwege wordt doorgeknipt naar de volgende kolom */
-    margin-bottom: 20px;    /* De witruimte onder elke afbeelding */
+    break-inside: avoid;
+    margin-bottom: 20px;
     cursor: pointer;
 }
 
 .grid-item img {
-    width: 100%;            /* Vult de kolombreedte netjes op */
-    height: auto;           /* Behoudt de eigen hoogte/verhouding van elke afbeelding */
+    width: 100%;
+    height: auto;
     display: block;
     transition: opacity 0.2s ease;
 }
@@ -122,7 +122,7 @@ font-family: "National Park", sans-serif;
 
 .contact-list i {
     width: 24px;
-font-weight: bold;
+    font-weight: bold;
     font-size: 1.2rem;
     color: #ffcae9; 
     margin-right: 15px;
@@ -132,31 +132,29 @@ font-weight: bold;
 .contact-list a, 
 .contact-list span {
     color: #3f51b5;
-font-weight: bold;
+    font-weight: bold;
     text-decoration: none;
 }
-
 
 .contact-list a:hover {
     text-decoration: underline;
 }
 
-/* LIGHTBOX STIJLEN (De pop-up overlay) */
+/* LIGHTBOX STIJLEN */
 .lightbox {
-    display: none; /* Standaard onzichtbaar */
+    display: none;
     position: fixed;
     z-index: 100;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.85); /* Witte/lichte transparante achtergrond */
+    background-color: rgba(255, 255, 255, 0.85);
     justify-content: center;
     align-items: center;
     padding: 40px;
 }
 
-/* NIEUW: Container die de foto en tekst netjes onder elkaar houdt */
 .lightbox-content {
     display: flex;
     flex-direction: column;
@@ -167,9 +165,9 @@ font-weight: bold;
 
 .lightbox-img {
     max-width: 100%;
-    max-height: 75vh; /* Iets kleiner gemaakt zodat er ruimte overblijft voor de tekst */
+    max-height: 75vh;
     object-fit: contain;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Subtiele schaduw */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* ABOUT PAGINA STIJLEN */
@@ -177,7 +175,7 @@ font-weight: bold;
     margin-left: 260px;
     padding: 50px 40px;
     width: calc(100% - 260px);
-    max-width: 680px; /* Zorgt dat de tekstregels niet te breed en onleesbaar worden */
+    max-width: 680px;
 }
 
 .about-image {
@@ -191,17 +189,14 @@ font-weight: bold;
     display: block;
     margin: 0 auto;
 }
+
 .about-text p {
     margin-bottom: 18px;
     line-height: 1.6;
     font-size: 1rem;
-    color: #3f51b5; /* Pas aan naar jouw exacte blauwe kleurcode */
+    color: #3f51b5;
 }
 
-
-
-
-/* NIEUW: Stijl voor de tekst onder de foto */
 .lightbox-caption {
     margin-top: 15px;
     color: #454ade;
@@ -227,25 +222,27 @@ font-weight: bold;
 
 /* Mobiele weergave (schermen smaller dan 768px) */
 @media (max-width: 768px) {
-    /* Zorg dat de hoofdcontainer niet naast elkaar blijft staan */
-    body, .container, .wrapper {
+    .site-container {
         display: block;
-        flex-direction: column;
     }
 
-    /* Zet de zijbalk bovenaan over de volle breedte */
-    aside, .sidebar {
+    .sidebar {
         position: static;
         width: 100%;
         height: auto;
-        padding: 20px;
+        padding: 30px 20px;
     }
 
-    /* Haal de vaste linker-marge weg bij de hoofdinhoud */
-    main, .content {
+    .gallery {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+        column-count: 1; /* Op mobiel netjes 1 foto per rij onder elkaar */
+    }
+
+    .about-content {
         margin-left: 0;
         width: 100%;
         padding: 20px;
     }
-}
 }
